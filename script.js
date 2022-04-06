@@ -1,9 +1,25 @@
+/* fetch a resource and display the response as in a given element */
+function fetchResource(url, container) {
+	let element = document.getElementById(container);
+	fetch(url)
+		.then(function (response) {
+			return response.text();
+		})
+		.then(function (text) {
+			element.innerHTML = text;
+		});
+}
+
+fetchResource('/assets/header.html', "header");
+fetchResource('/assets/footer.html', "footer");
+
+
 /* Display current day, month and year in the footer as in the example below:
-Monday, January 1, 2020
+Wednesday, January 1, 2020
 */
 
 //months array
-const months = new Array();
+const months = [];
 months[0] = "January";
 months[1] = "February";
 months[2] = "March";
@@ -34,6 +50,9 @@ const day = weekdays[d.getDay()];
 const month = months[d.getMonth()];
 const date = d.getDate();
 const year = d.getFullYear();
+
+
+
 
 
 document.getElementById("date").innerHTML = `${day}, ${month} ${date}, ${year}`;
