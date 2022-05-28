@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 1rem;
+  color: black;
+  text-align: left;
+  background-color: #ffffff;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+header {
+  margin: 80px auto;
+  background-image: url("images/pattern.webp");
+}
+
+h1 {
+  font-size: 100px;
+  font-weight: bold;
+  color: khaki;
+  text-align: center;
+}
+
+section img {
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+figcaption {
+  font-weight: 900;
+  margin: 1em auto;
+}
+
+.price {
+  font-weight: bold;
+  color: blue;
+}
+
+h2 {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 20px auto;
+}
+
+#brushes-heading {
+  background-color: mediumspringgreen;
+}
+
+#frames-heading {
+  background-color: lightcoral;
+}
+
+#paint-heading {
+  background-color: skyblue;
+}
