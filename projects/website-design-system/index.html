@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Website Design System</title>
+
+  <!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+   href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Noto+Sans+Display:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Serif+Display:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+   rel="stylesheet">
+
+  <!-- Styles -->
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header>
+		<h1>My Style Guide</h1>
+	</header>
+	<main>
+
+		<!-- colors -->
+		<section>
+			<h2>Palette</h2>
+			<div class="color-palette">
+				<!-- Earth Monochromatic 1 -->
+				<div class="earth-monochromatic-1">
+					<p>Earth Monochromatic 1</p>
+					<p>#F6D6B6</p>
+					<p>rgba(246, 214, 182, 1)</p>
+					<p>hsla(30, 78, 83, 1)</p>
+				</div>
+    <!-- Earth Monochromatic 2 -->
+				<div class="earth-monochromatic-2">
+					<p>Earth Monochromatic 2</p>
+					<p>#EEB981</p>
+					<p>rgba(238, 185, 129, 1)</p>
+					<p>hsla(30, 76, 71, 1)</p>
+				</div>
+    <!-- Earth Monochromatic 3 -->
+				<div class="earth-monochromatic-3">
+					<p>Earth Monochromatic 3</p>
+					<p>#E69947</p>
+					<p>rgba(230, 153, 71, 1)</p>
+					<p>hsla(30, 76, 59, 1)</p>
+				</div>
+    <!-- Earth Monochromatic 4 -->
+				<div class="earth-monochromatic-4">
+					<p>Earth Monochromatic 4</p>
+					<p>#C5731B</p>
+					<p>rgba(197, 115, 27, 1)</p>
+					<p>hsla(31, 75, 43, 1)</p>
+					</div>
+    <!-- Earth Monochromatic 5 -->
+				<div class="earth-monochromatic-5">
+					<p>Earth Monochromatic 5</p>
+					<p>#905414</p>
+					<p>rgba(144, 84, 20, 1)</p>
+					<p>hsla(30, 75, 32, 1)</p>
+					</div>
+			</div>
+		</section>
+
+  <!-- fonts -->
+		<section>
+			<h2>Typography</h2>
+			<div class="fonts-container">
+       <div class="editor-controls">
+       <!-- Font -->
+       <div>
+         <div>
+         <label for="font">Font</label>
+         <select id="font">
+           <option>Roboto</option>
+        </select>
+       </div>
+         <!-- Font Size -->
+         <div>
+         <div>
+         <label for="font-size">Font</label>
+         <input type="range" id="font-size" min="10" max="100" value="20">
+           <span id="font-size-value">20</span>
+       </div>
+         </div>
+       </div>
+       </div>
+   </div>
+					 <p class="regular font-types" contenteditable="true">
+						  The quick brown fox jumps over the lazy dog.
+					 </p>
+		</section>
+
+  <!-- text-styles -->
+		<section>
+			<h2>My Styles</h2>
+			<div class="text-container">
+				<div class="heading-style">
+				<h1>H1: main page heading</h1>
+				<ul>
+					<li>Font-weight: 700 (bold)</li>
+					<li>Font-size: 26px</li>
+					<li>Font-family: Noto Serif Display</li>
+				</ul>
+				</div>
+
+				<div class="subheading-style">
+				<h2>H2: Subheading</h2>
+				<ul>
+					<li>Font-weight: 500</li>
+					<li>Font-size: 18px</li>
+					<li>Font-family: Noto Sans Display</li>
+				</ul>
+				</div>
+
+				<div class="paragraph-style">
+				<h2>P: paragraph text</h2>
+				<ul>
+					<li>Font-weight: 400 (regular)</li>
+					<li>Font-size: 14px</li>
+					<li>Font-family: M Plus Rounded 1c</li>
+				</ul>
+				</div>
+			</div>
+		</section>
+	</main>
+	<script src="main.js"></script>
+</body>
+</html>

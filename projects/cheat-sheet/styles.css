@@ -1,0 +1,75 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #333;
+	background-color: rgb(200, 200, 200);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: solid 1px #ccc;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+table th {
+	font-weight: bold;
+	background-color: goldenrod;
+	color: black;
+	padding: 10px;
+	border: solid 1px #000;
+}
+
+table td {
+	width: 100px;
+}
+
+table tr td {
+	padding: 10px;
+	border: solid 1px #000;
+}
+
+table tr {
+	border-bottom: solid 1px #ccc;
+}
+
+table tr:nth-child(odd) {
+	background-color: bisque
+}
+
+table tr:nth-child(even) {
+	background-color: papayawhip
+}
+
+table tr:last-child {
+	border-bottom: none;
+}
+
+
+.button {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0px 4px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:active {
+  margin-top: 24px;
+  color: black;
+  box-shadow: 0px 0px;
+  margin-bottom: 16px;
+  box-shadow: 0px 0px;
+  background-color: #C0D6DF;
+  color: #ffffff;
+}

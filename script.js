@@ -1,3 +1,14 @@
+/* jshint esversion: 6 */
+
+(function () {
+	'use strict';
+	// this function is strict...
+}());
+
+(function () {
+	// but this function is sloppy...
+}());
+
 /* fetch a resource and display the response as in a given element */
 function fetchResource(url, container) {
 	let element = document.getElementById(container);
@@ -9,6 +20,7 @@ function fetchResource(url, container) {
 			element.innerHTML = text;
 		});
 }
+
 
 fetchResource('/assets/header.html', "header");
 fetchResource('/assets/footer.html', "footer");
@@ -50,9 +62,5 @@ const day = weekdays[d.getDay()];
 const month = months[d.getMonth()];
 const date = d.getDate();
 const year = d.getFullYear();
-
-
-
-
 
 document.getElementById("date").innerHTML = `${day}, ${month} ${date}, ${year}`;
