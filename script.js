@@ -1,15 +1,4 @@
 /* jshint esversion: 6 */
-
-(function () {
-	'use strict';
-	// this function is strict...
-}());
-
-(function () {
-	// but this function is sloppy...
-}());
-
-/* fetch a resource and display the response as in a given element */
 function fetchResource(url, container) {
 	let element = document.getElementById(container);
 	fetch(url)
@@ -17,18 +6,40 @@ function fetchResource(url, container) {
 			return response.text();
 		})
 		.then(function (text) {
-			element.innerHTML = text;
-		});
+			if (element) {
+				element.innerHTML = text;
+			}
+		})
+        .catch(function (error) {
+            console.log(error);
+        });
 }
-
 
 fetchResource('/assets/header.html', "header");
 fetchResource('/assets/footer.html', "footer");
 
+// const getResource = (url) => {
+//     let resource;
+//     fetch(url)
+//         .then(function (response) {
+//             return response.text();
+//         })
+//         .then(function (content) {
+//             resource = content;
+//         });
+//     return resource;
+// }
+//
+// const displayResource = (content, container) => {
+// 	document.querySelector(container).innerHTML = content;
+// }
+//
+// const header = getResource('/assets/header.html');
+// const footer = getResource('/assets/footer.html');
+//
+// displayResource(header, 'header');
+// displayResource(footer, 'footer');
 
-/* Display current day, month and year in the footer as in the example below:
-Wednesday, January 1, 2020
-*/
 
 //months array
 const months = [];
@@ -55,7 +66,6 @@ weekdays[4] = "Thursday";
 weekdays[5] = "Friday";
 weekdays[6] = "Saturday";
 
-
 //get current date
 const d = new Date();
 const day = weekdays[d.getDay()];
@@ -63,4 +73,7 @@ const month = months[d.getMonth()];
 const date = d.getDate();
 const year = d.getFullYear();
 
-document.getElementById("date").innerHTML = `${day}, ${month} ${date}, ${year}`;
+const dateElement = document.getElementById("date");
+if (dateElement) {
+    dateElement.innerHTML = `${day}, ${month} ${date}, ${year}`;
+}
