@@ -1,41 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mixed Messages</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-  </head>
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mixed Messages</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Oriya:wght@400;500;600;700&display=swap"
+      rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
 
-  <body>
-    <header>
-      <h1>Mantra Generator</h1>
-      <div>
-        <div class="flexbox-inline" id="button-container">
-          <div class="flexbox-inline">
-            <label for="tag" class="picker-title">TAG</label>
-            <input id="tag" type="text">
-          </div>
-          <input id="mantra-button" type="submit" value="Generate">
-        </div>
-      </div>
-    </header>
-    <main>
-      <section>
-        <h2 class="mantra"><span class="mantra-placeholder">-- Click the button
-            above
-            to see mantra here --</span></h2>
-      </section>
-    </main>
-    <script src="script.js" type="module"></script>
-    <script src="colorizes.js"></script>
-  </body>
+<body>
+<header>
+  <h1>Mantra Generator</h1>
+  <div id="button-wrapper">
+    <label id="text-label" class="btn-group" for="text-input">Tag</label>
+    <input class="btn-group picker-title" id="text-input" type="text" placeholder="e.g. love"/>
+    <button class="btn-group" id="button" type="button">Generate
+    </button>
+  </div>
+</header>
+<main>
+  <div id="mantra-wrapper"></div>
+</main>
+<script src="script.js" type="module"></script>
+</body>
 
 </html>
