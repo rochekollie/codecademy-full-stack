@@ -1,0 +1,8 @@
+{
+    "excluded": [
+     "/.fleet",
+     "/.idea",
+     "/.vscode",
+     "/.gitignore",
+    ]
+}

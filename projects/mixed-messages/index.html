@@ -2,31 +2,44 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mixed Messages</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Oriya:wght@400;500;600;700&display=swap"
-      rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Famous Quotes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+Oriya:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 <header>
-  <h1>Mantra Generator</h1>
-  <div id="button-wrapper">
-    <label id="text-label" class="btn-group" for="text-input">Tag</label>
-    <input class="btn-group picker-title" id="text-input" type="text" placeholder="e.g. love"/>
-    <button class="btn-group" id="button" type="button">Generate
-    </button>
-  </div>
+    <h1 id="app-name">Famous Quotes</h1>
+    <form id="search-form" action="./" method="get">
+        <label class="btn-group" for="search-field">Tag</label>
+        <input class="btn-group" id="search-field" type="text" value="love" />
+        <button class="btn-group" id="search-button" type="button">Get
+            Quotes</button>
+    </form>
 </header>
 <main>
-  <div id="mantra-wrapper"></div>
+    <div id="cards-wrapper">
+        <!--  sample card -->
+        <div class="card">
+            <p class="quote">
+                Love is rarer than genius itself. And friendship is rarer than love.
+            </p>
+            <p class="author">Charles Péguy</p>
+            <div class="tags-wrapper">
+                <span class="tags">friendship</span>
+                <span class="tags">genius</span>
+            </div>
+        </div>
+    </div>
 </main>
+<footer></footer>
 <script src="script.js" type="module"></script>
 </body>
 

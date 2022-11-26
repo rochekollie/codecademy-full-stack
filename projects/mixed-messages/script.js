@@ -1,80 +1,117 @@
-import { adjectives, nouns, verbs } from './data.mjs';
+import { getContrastYIQ, getRandomColor } from './modules/beautify.mjs';
+import { createCard } from './modules/createCard.mjs';
+import { adjectives, nouns, verbs } from './modules/data.mjs';
 
-const randomElement = (array) => {
-  return array[Math.floor(Math.random() * array.length)];
-};
+document.addEventListener('DOMContentLoaded', () => {
+  const randomElement = (array) => {
+    return array[Math.floor(Math.random() * array.length)];
+  };
 
-const generateMessage = (nouns, verbs, adjectives) => {
+  const queryResource = async (query) => {
+    const url =
+      'https://api.quotable.io/search/quotes?query=${query}&fields=content';
+    const response = await fetch(url);
+    return response.json();
+  };
+
+  const generateMessage = (nouns, verbs, adjectives) => {
     const noun = randomElement(nouns);
-    //const noun = document.getElementById('text-input').value;
     const verb = randomElement(verbs);
     const adjective = randomElement(adjectives);
     const mantra = `${noun} ${verb} ${adjective}`;
     return mantra.charAt(0).toUpperCase() + mantra.slice(1);
-};
+  };
 
-function showMantras(components) {
-  components.forEach(function (component) {
-    component.innerHTML = generateMessage(nouns, verbs, adjectives);
-  });
-}
-
-/**
- * Generate a random hex color
- * @returns {string} - hex color
- */
-export const getRandomColor = () => {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i += 1) {
-    color += letters[Math.floor(Math.random() * 16)];
+  function getMantras(components) {
+    components.forEach(function (component) {
+      component.innerHTML = generateMessage(nouns, verbs, adjectives);
+    });
   }
-  return color;
-};
 
-/**
- * Generate a random hex color
- * @param {*} hexColor  - hex color
- * @returns  - text color
- */
-export const getContrastYIQ = (hexColor) => {
-  const r = parseInt(hexColor.substr(1, 2), 16);
-  const g = parseInt(hexColor.substr(3, 2), 16);
-  const b = parseInt(hexColor.substr(5, 2), 16);
-  const yiq = (r * 299 + g * 587 + b * 114) / 1000;
-  return yiq >= 128 ? 'black' : 'white';
-};
-
-function colorize(components) {
-  components.forEach(function (section) {
-    section.style.backgroundColor = getRandomColor();
-    section.style.color = getContrastYIQ(getRandomColor());
-  });
-}
-
-const createMantraComponent = () => {
-  const mantra = document.createElement('h2');
-  mantra.setAttribute('class', 'mantra');
-  return mantra;
-};
-
-const createMantraComponents = (count) => {
-  const components = [];
-  for (let i = 0; i < count; i += 1) {
-    components.push(createMantraComponent());
+  function colorize(components) {
+    components.forEach(function (section) {
+      section.style.backgroundColor = getRandomColor();
+      section.style.color = getContrastYIQ(getRandomColor());
+    });
   }
-  return components;
-};
 
-const mantraButton = document.querySelector('#button');
-mantraButton?.addEventListener('click', (e) => {
-  e.preventDefault();
-  const mantraWrapper = document.querySelector('#mantra-wrapper');
-  mantraWrapper.innerHTML = '';
-  const mantraComponents = createMantraComponents(60);
-  for (let i = 0; i < mantraComponents.length; i += 1) {
-    mantraWrapper.appendChild(mantraComponents[i]);
+  const createCardComponents = (count) => {
+    const components = [];
+    for (let i = 0; i < count; i += 1) {
+      components.push(createCard());
+    }
+    return components;
+  };
+
+  function displayQuotes(promise) {
+    const totalQuotes = 20; // change this to change the number of quotes
+    const quoteComponents = createCardComponents(totalQuotes);
+    const quoteContainer = document.getElementById('quote-container');
+
+    const quoteCards = document.getElementById('quote-wrapper');
+    if (quoteCards) {
+      quoteCards.innerHTML = '';
+    }
+
+    // get the user query
+    const query = document.getElementById('search-field').value;
+
+    // get the quotes from the API
+    const quotes = queryResource(query);
+
+    // create the quote cards
+    quotes.then((data) => {
+      data.results.forEach((quote, index) => {
+        const quoteCard = quoteComponents[index];
+        const quoteParagraph = quoteCard.querySelector('.quote');
+        const quoteAuthor = quoteCard.querySelector('.quote-author');
+        const quoteTag = quoteCard.querySelector('.tag');
+        quoteParagraph.innerHTML = quote.content;
+        quoteAuthor.innerHTML = quote.author;
+        quoteTag.innerHTML = quote.tags;
+        quoteCards.appendChild(quoteCard);
+      });
+    });
+
+    // display the quote cards
+    quoteContainer.style.display = 'block';
   }
-  showMantras(mantraComponents);
-  colorize(mantraComponents);
+
+  const getQuoteTag = () => {
+    const tags = document.querySelectorAll('.tags');
+    let quoteTag = '';
+    tags.forEach((tag) => {
+      tag.addEventListener('click', (event) => {
+        quoteTag = event.target.innerHTML;
+      });
+    });
+    return quoteTag;
+  };
+
+  const autoFillField = (input, value) => {
+    if (input && value) {
+      input.value = value;
+    }
+  };
+
+  const searchField = document.getElementById('search-field');
+  autoFillField(searchField, getQuoteTag());
+
+  function searchQuotesByTagName(tagValue) {
+    queryResource(tagValue).then((data) => {
+      console.log(data);
+    });
+  }
+
+  const getQuoteButton = document.querySelector('#search-button');
+
+  // Attach an event listener to the `button`
+  getQuoteButton?.addEventListener('click', displayQuotes);
+
+  // load the page with quotes
+  //displayQuotes();
+  //colorize(document.querySelectorAll('section')); // experiment and delete it
+
+  // call the searchQuotesByTagName function
+  searchQuotesByTagName();
 });

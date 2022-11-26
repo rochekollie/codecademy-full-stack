@@ -1,2 +1,3 @@
-# Codecademy Projects
-Projects of all the book apps and try-this projects from the textbook jQuery: A Beginner's Guide" by John Pollock
+# Full Stack Engineer Career Path
+
+This repo contains all the Codecademy projects in the Full Stack Engineer Career Path.
