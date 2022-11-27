@@ -1,43 +1,37 @@
-import {getContrastYIQ, getRandomColor} from './beautify.mjs';
-import {companies, databases, frameworks, languages, platforms, tools} from './data.mjs';
-
+import {nouns, verbs, adjectives, subjects} from './partsOfSpeech.mjs';
 
 document.addEventListener('DOMContentLoaded', () => {
+  const getRandomElement = (array) => {
+    return array[Math.floor(Math.random() * array.length)];
+  };
 
-    const randomElement = (array) => {
-        return array[Math.floor(Math.random() * array.length)];
-    };
+  const getRandomSentence = () => {
+    const noun = getRandomElement(nouns);
+    const verb = getRandomElement(verbs);
+    const adjective = getRandomElement(adjectives);
+    const subject = getRandomElement(subjects);
 
-    const getMessage = () => {
-        const noun = randomElement(languages);
-        const verb = randomElement(frameworks);
-        const adjective = randomElement(databases);
-        const adverb = randomElement(tools);
-        const preposition = randomElement(platforms);
-        const company = randomElement(companies);
-        const message = `${noun} ${verb} ${adjective}`;
-        return message.charAt(0).toUpperCase() + message.slice(1);
-    };
+    const randomForm = getRandomElement([true, false]);
 
-    function displayMessage() {
-        const messageContainer = document.getElementById('message');
-        if (messageContainer) {
-            messageContainer.innerHTML = getMessage();
-        }
+    let sentence = '';
+
+    // If randomForm is true, the sentence will be in the form of
+    if (randomForm) {
+      sentence = `${noun} ${verb} ${adjective} ${subject}.`;
+    } else { // If randomForm is false, the sentence will be in the form of
+      sentence = `${adjective} ${subject} ${verb} ${noun}.`;
     }
 
-    function decorateCard(card) {
-        card.style.backgroundColor = getRandomColor();
-        card.style.color = getContrastYIQ(getRandomColor());
-    }
+    return sentence.charAt(0).toUpperCase() + sentence.slice(1);
+  };
 
-    // Add event listener to the button
-    document.querySelector('button')?.addEventListener('click', displayMessage);
+  function displaySentence() {
+    document.querySelector('p').innerHTML = getRandomSentence();
+  }
 
-    // load the page with a message
-    displayMessage();
-    decorateCard(document.querySelector('card')); // experiment and delete it
+  // Add event listener to the button
+  document.querySelector('button')?.addEventListener('click', displaySentence);
 
-    // call the displayMessage function
-    getMessage();
+  // load the page with a message
+  displaySentence();
 });
