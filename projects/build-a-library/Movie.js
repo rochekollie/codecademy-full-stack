@@ -1,20 +1,18 @@
-import {Media} from "./Media";
+import {Media} from "./Media.js";
 
-class Movie extends Media {
-  constructor (director, title, runTime, isCheckOut, ratings) {
-    super(title, isCheckOut, ratings);
-    this.director = director;
-    this.runTime = runTime;
+export class Movie extends Media {
+  constructor (director, title, runTime) {
+    super(title);
+    this._director = director;
+    this._runTime = runTime;
   }
 
-  getDirector() {
-    return this.director;
+  get director() {
+    return this._director;
   }
 
-  getRunTime() {
-    return this.runTime;
+  get runTime() {
+    return this._runTime;
   }
 
 }
-
-export {Movie};

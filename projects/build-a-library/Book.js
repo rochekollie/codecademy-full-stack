@@ -1,19 +1,17 @@
-import {Media} from "./Media";
+import {Media} from "./Media.js";
 
-class Book extends Media {
-  constructor(author, title, pages, isCheckOut, ratings) {
-    super(title, isCheckOut, ratings);
-    this.author = author;
-    this.pages = pages;
+export class Book extends Media {
+  constructor(author, title, pages) {
+    super(title);
+    this._author = author;
+    this._pages = pages;
   }
 
-  getAuthor(){
-    return this.author;
+  get author(){
+    return this._author;
   }
 
-  getPages(){
-    return this.pages;
+  get pages(){
+    return this._pages;
   }
 }
-
-export {Book};

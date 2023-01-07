@@ -1,8 +1,8 @@
-import {Media} from "./Media";
+import {Media} from "./Media.js";
 
-class CD extends Media {
-  constructor(artist, title, isCheckOut, ratings, songs) {
-    super(title, isCheckOut, ratings);
+export class CD extends Media {
+  constructor(artist, title, ratings, songs) {
+    super(title, ratings);
     this.artist = artist;
     this.songs = songs;
   }
@@ -15,5 +15,3 @@ class CD extends Media {
     return this.songs;
   }
 }
-
-export {CD};
