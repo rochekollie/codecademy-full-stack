@@ -9,6 +9,10 @@
       <excludeFolder url="file://$MODULE_DIR$/projects/dasmotos-arts-and-crafts/.vscode" />
       <excludeFolder url="file://$MODULE_DIR$/projects/website-design-system/.vscode" />
       <excludeFolder url="file://$MODULE_DIR$/.vscode" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/httpRequests" />
+      <excludeFolder url="file://$MODULE_DIR$/projects/build-a-library/.idea/httpRequests" />
+      <excludeFolder url="file://$MODULE_DIR$/projects/build-a-library/.fleet" />
+      <excludeFolder url="file://$MODULE_DIR$/.fleet" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

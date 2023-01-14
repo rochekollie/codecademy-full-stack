@@ -9,7 +9,6 @@ historyOfEverything.toggleCheckOutStatus();
 // log the value saved to the isCheckOut property in the historyOfEverything instance
 console.log(historyOfEverything.checkOutStatus);
 
-
 // call the addRating method three times on the historyOfEverything instance
 historyOfEverything.ratings.push(4);
 historyOfEverything.ratings.push(5);

@@ -114,7 +114,6 @@ const highSchoolSportsTeam = [
   'Volleyball',
   'Track and Field'
 ];
-
 const alSmith = new HighSchool('Al E. Smith', 415, highSchoolSportsTeam);
 
 log(alSmith.sportsTeam);

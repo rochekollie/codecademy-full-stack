@@ -200,3 +200,12 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
+.fleet/
+.DS_Store
+.gitignore
+.idea/.DS_Store
+.idea/codecademy-full-stack.iml
+projects/.DS_Store
+projects/build-a-library/.DS_Store
+
+
