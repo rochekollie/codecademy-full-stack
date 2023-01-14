@@ -13,5 +13,6 @@ WorkAround now wants to release a new web application called WorkAround Explorer
 - The average salary at the chosen company across all roles.
 - The industry average salary across all roles and all companies.
 
-Front-end developers have already designed much of the user interface, however, the core data and functionality are either missing or need to be connected together using modules. Your task is to help your team members out by using your import and export expertise!
+![WorkAround Explorer](./work_around_explorer_demo.gif)
 
+Front-end developers have already designed much of the user interface, however, the core data and functionality are either missing or need to be connected together using modules. Your task is to help your team members out by using your `import` and `export` expertise!
