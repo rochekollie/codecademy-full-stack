@@ -29,5 +29,25 @@ const getDataByCompany = company => {
   return salaryData.filter(obj => obj.company === company);
 }
 
+// INSTRUCTIONS:
+//  Open salaryData.js where you will find the collected data in the variable salaryData.
+//  Below are four functions for filtering down these data.
+//
+// You need to:
+//
+// Export the four functions from salaryData.js using ES6 named export syntax.
+// Export the salaryData array as the default export.
+
+const dataOperations = {
+  getRoles,
+  getCompanies,
+  getDataByRole,
+  getDataByCompany,
+};
+
+export {getRoles, getCompanies, getDataByRole, getDataByCompany};
+export default salaryData;
+
+
 
 
