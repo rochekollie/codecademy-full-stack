@@ -38,13 +38,6 @@ const getDataByCompany = company => {
 // Export the four functions from salaryData.js using ES6 named export syntax.
 // Export the salaryData array as the default export.
 
-const dataOperations = {
-  getRoles,
-  getCompanies,
-  getDataByRole,
-  getDataByCompany,
-};
-
 export {getRoles, getCompanies, getDataByRole, getDataByCompany};
 export default salaryData;
 
